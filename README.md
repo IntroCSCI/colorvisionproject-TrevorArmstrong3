@@ -6,7 +6,7 @@ It reads colors from a CSS file and outputs the hexidecimal color codes
 
 ### v0.2 Updates
 
-*Coming soon*
+It can now read 3 digit hexidecimal color codes as well as 6 digit ones and at the end it will sort through all of the stored values and only output the unique ones. At the end it will also tell the number of unique colors in the file.
 
 ### v1.0 Updates
 
@@ -30,13 +30,14 @@ Here is an example of the program running:
 ```
 please enter filename:
 thing
-#ac2925
-#ac2925
-#ac2925
-#ac2925
-#ffffff
-#222222
+#ff0
+#000
+#c0c0c0
+#999
+#fff
+#ddd
 ...
+There are 318 unique colors.
 ```
 
 ## C++ Guide
@@ -63,11 +64,11 @@ This program likely works with any CSS file and can output the hexidecimal color
 
 ### Arrays/Vectors
 
-*Coming in version 0.2*
+Vectors were used to store all the characters found after the # that passed the check for if they were a hexidecimal color code or not. Then another vector was used to store those all of the hexidecimal color codes that were found by the program. 
 
 ### Functions
 
-*Coming in version 0.2*
+One fo the fuctions used for checking for if the characters found after the "#" are actually characters of a hexidecimal color code. This function has a vector return type. The other function was checking if the found hexidecimal color is already stored and if it is then it discards it in order to only keep the unique colors. This function has a void return type. Both of these fuctions are pass-by-reference because they are used to modify the vector that is given to them.
 
 ### Classes
 
