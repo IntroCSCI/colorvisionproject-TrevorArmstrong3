@@ -38,7 +38,7 @@ int main()
   color color1;
   stringstream what; 
   vector<string> list;
-  vector<int> greyscale,last;
+  vector<int> last;
   string filename,line,temp,target("#"),rating="fat";
   vector<char> hexi(6);
   fstream reader;
@@ -54,7 +54,6 @@ int main()
       getline(reader,line);
       what.str(string());
       hexi.clear();
-      greyscale.clear();
       size_t found = line.find(target);
       if (found!=string::npos)
       {
@@ -74,16 +73,9 @@ int main()
     for(int i=0; i<list.size(); i++)
     {
       color1.conversion(list[i], y);
-      greyscale.push_back(y);
+      color1.addgrey(y);
     }
-    for(int i=0;i<greyscale.size();i++)
-    {
-      for(int x=0;x<greyscale.size();x++)
-      {
-        num=greyscale[i]-greyscale[x];
-        last.push_back(num);
-      }
-    }
+    color1.math(last,num);
     for(int i=0;i<last.size();i++)
     {
       if(((last[i]<=30)&&(last[i]>=1))||((last[i]>=-30)&&(last[i]<=-1)))

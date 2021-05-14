@@ -10,7 +10,6 @@ using std::vector;
 class color
 {
   private: 
-    vector <int> last;
     vector <int> storedgrey;
   public: 
     int rgbtogreyscale(int r, int g, int b,int &y);
@@ -18,7 +17,9 @@ class color
     string check3(string &hexi);
     int conversion(string hexi, int &y);
     vector <int>addgrey(int y);
-    vector <int> store(int x);
+    
+    int size();
+    void math(vector<int>&x,int y);
 };
 
 #endif

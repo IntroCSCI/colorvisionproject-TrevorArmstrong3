@@ -66,10 +66,9 @@ One fo the fuctions used for checking for if the characters found after the "#" 
 
 ### Classes
 
-A class was used to store a few vectors the functions that were used to convert the hexidecimal to rgb, then from rgb into greyscaled rgb, then from that into the difference in color.
+A class was used to store the vector that held all the grey rgb values so that the functions in the class could use it to find the problematic color combos in the palete.
 
 
 
 
 
-hi

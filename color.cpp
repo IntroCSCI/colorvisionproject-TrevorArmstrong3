@@ -50,7 +50,18 @@ vector <int>color::addgrey(int y){
   return storedgrey;
 }
 
-vector <int>color::store(int x){
-  last.push_back(x);
-  return last;
+int color::size(){
+  storedgrey.size();
+  return 0;
+}
+
+void color::math(vector<int>&last,int num){
+ for(int i=0;i<storedgrey.size();i++)
+  {
+    for(int x=0;x<storedgrey.size();x++)
+    {
+      num=storedgrey[i]-storedgrey[x];
+      last.push_back(num);
+    }
+  }
 }
