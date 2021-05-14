@@ -10,7 +10,7 @@ It can now read 3 digit hexidecimal color codes as well as 6 digit ones and at t
 
 ### v1.0 Updates
 
-*Coming soon*
+Now displays a rating diterminded by the possible problematic color combinations in you palatte.
 
 
 ## Developer
@@ -30,14 +30,8 @@ Here is an example of the program running:
 ```
 please enter filename:
 thing
-#ff0
-#000
-#c0c0c0
-#999
-#fff
-#ddd
-...
-There are 318 unique colors.
+You have 24940 problematic color combiniations.
+Your overall rating is: very bad
 ```
 
 ## C++ Guide
@@ -72,4 +66,4 @@ One fo the fuctions used for checking for if the characters found after the "#" 
 
 ### Classes
 
-*Coming in version 1.0*
+A class was used to store a few vectors the functions that were used to convert the hexidecimal to rgb, then from rgb into greyscaled rgb, then from that into the difference in color.

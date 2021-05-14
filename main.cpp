@@ -4,6 +4,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include "color.h"
 using namespace std;
 
 vector<string> isunique(vector<string> &v,string x)
@@ -33,9 +34,12 @@ void hexicheck(string line, int found, vector<char> &hexi)
 
 int main() 
 {
+  int y,counter=0,num;
+  color color1;
   stringstream what; 
   vector<string> list;
-  string filename,line,temp,target("#");
+  vector<int> greyscale,last;
+  string filename,line,temp,target("#"),rating="fat";
   vector<char> hexi(6);
   fstream reader;
 
@@ -50,6 +54,7 @@ int main()
       getline(reader,line);
       what.str(string());
       hexi.clear();
+      greyscale.clear();
       size_t found = line.find(target);
       if (found!=string::npos)
       {
@@ -68,10 +73,36 @@ int main()
     }
     for(int i=0; i<list.size(); i++)
     {
-      cout<<"#"<<list[i]<<endl;
+      color1.conversion(list[i], y);
+      greyscale.push_back(y);
     }
-    cout<<"There are "<<list.size()<<" unique colors.";
+    for(int i=0;i<greyscale.size();i++)
+    {
+      for(int x=0;x<greyscale.size();x++)
+      {
+        num=greyscale[i]-greyscale[x];
+        last.push_back(num);
+      }
+    }
+    for(int i=0;i<last.size();i++)
+    {
+      if(((last[i]<=30)&&(last[i]>=1))||((last[i]>=-30)&&(last[i]<=-1)))
+      {
+        counter=counter+1;
+      }
+    }
+    if(counter>=300){rating="very bad";}
+    else if((counter<=300)&&(counter>=201)){rating="bad";}
+    else if((counter<=200)&&(counter>=101)){rating="not great";}
+    else if((counter<=100)&&(counter>=51)){rating="average";}
+    else if((counter<=50)&&(counter>=21)){rating="good";}
+    else if((counter<=20)&&(counter>=1)){rating="great";}
+    else if(counter==0){rating="perfect";}
+    
+  cout<<"You have "<<counter<<" problematic color combiniations."<<endl;
+  cout<<"Your overall rating is: "<<rating;
   }
+
   else{cout<<"File could not be opened";}
   return 0;
 }
