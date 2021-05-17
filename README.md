@@ -46,7 +46,7 @@ The input and output are incredibly simple and cannot be messed up easily. There
 
 ### Decisions
 
-Decisions were used to throw out any false values. In most files there will be pound signs that are not immediatly followed up be hexidecimal color codes so it was needed to decide what is actually a color and not something else. The program decides throwing out any pound sing that is not followed by exactly six different characters. These caracters have to be between zero and nine or between the letter a and f. once those conditions are passed it is stored and outputted as the value seen on the console.
+Decisions were used to throw out any false values. In most files there will be pound signs that are not immediatly followed up be hexidecimal color codes so it was needed to decide what is actually a color and not something else. The program decides throwing out any pound sing that is not followed by exactly six different characters. These characters have to be between zero and nine or between the letter "a" and "f". Once those conditions are passed it is stored and outputted as the value seen on the console.
 
 ### Iteration
 
@@ -54,19 +54,19 @@ Iteration was essential for this program because it outputs multiple things with
 
 ### File Input and Output
 
-This program likely works with any CSS file and can output the hexidecimal color codes found in the code. all that needs to be done is uploading the file to the replit and typing in the file name when the program asks for it.
+This program likely works with any CSS file and can output the hexidecimal color codes found in the code. All that needs to be done is uploading the file to the replit and typing in the file name when the program asks for it.
 
 ### Arrays/Vectors
 
-Vectors were used to store all the characters found after the # that passed the check for if they were a hexidecimal color code or not. Then another vector was used to store those all of the hexidecimal color codes that were found by the program. 
+Vectors were used to store all the characters found after the "#" that passed the check for if they were a hexidecimal color code or not. Then another vector was used to store those all of the hexidecimal color codes that were found by the program. 
 
 ### Functions
 
-One fo the fuctions used for checking for if the characters found after the "#" are actually characters of a hexidecimal color code. This function has a vector return type. The other function was checking if the found hexidecimal color is already stored and if it is then it discards it in order to only keep the unique colors. This function has a void return type. Both of these fuctions are pass-by-reference because they are used to modify the vector that is given to them.
+One of the fuctions used for checking for if the characters found after the "#" are actually characters of a hexidecimal color code. This function has a vector return type. The other function was checking if the found hexidecimal color is already stored and if it is then it discards it in order to only keep the unique colors. This function has a void return type. Both of these fuctions are pass-by-reference because they are used to modify the vector that is given to them.
 
 ### Classes
 
-A class was used to store the vector that held all the grey rgb values so that the functions in the class could use it to find the problematic color combos in the palete.
+A class was used to store the vector that held all the grey rgb values so that the functions in the class could use it to find the problematic color combos in the palete. 
 
 
 
